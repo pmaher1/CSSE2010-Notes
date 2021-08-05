@@ -101,7 +101,53 @@ respectively.
 
 \subsubsection{Basic Logic Gates}
 
-[complete logic gates]
+\begin{tikzpicture}
+% Circuit style
+\ctikzset{
+    logic ports=ieee,
+    logic ports/scale=0.8,
+    logic ports/fill=lightgray
+}
+ 
+% Logic ports
+\node[not port] (Noa) at (0,0){NOT};
+\node[and port] (Anda) at (5,0){AND};
+\node[or port] (Ora) at (10,0){OR};
+
+\node[nand port] (Nanda) at (0,-2){NAND};
+\node[nor port] (Nora) at (5,-2){NOR};
+\node[xor port] (Xora) at (10,-2){XOR};
+
+\node[xnor port] (Xnora) at (5,-4){XNOR};
+
+% Connection 
+\draw (Noa.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Noa.out) -- ++(.5,0) node[near end,above]{X};
+
+\draw (Anda.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Anda.in 2) -- ++(-.5,0)node[near end,below](In1){B};
+\draw (Anda.out) -- ++(.5,0) node[near end,above]{X};
+
+\draw (Ora.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Ora.in 2) -- ++(-.5,0)node[near end,below](In1){B};
+\draw (Ora.out) -- ++(.5,0) node[near end,above]{X};
+
+\draw (Nanda.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Nanda.in 2) -- ++(-.5,0)node[near end,below](In1){B};
+\draw (Nanda.out) -- ++(.5,0) node[near end,above]{X};
+
+\draw (Nora.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Nora.in 2) -- ++(-.5,0)node[near end,below](In1){B};
+\draw (Nora.out) -- ++(.5,0) node[near end,above]{X};
+
+\draw (Xora.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Xora.in 2) -- ++(-.5,0)node[near end,below](In1){B};
+\draw (Xora.out) -- ++(.5,0) node[near end,above]{X};
+
+\draw (Xnora.in 1) -- ++(-.5,0)node[near end,above](In1){A};
+\draw (Xnora.in 2) -- ++(-.5,0)node[near end,below](In1){B};
+\draw (Xnora.out) -- ++(.5,0) node[near end,above]{X};
+\end{tikzpicture}
 
 \subsection{Boolean Logic}
 \subsubsection{Boolean Logic Functions}
@@ -325,6 +371,7 @@ A & B & Cin & Cout & Sum \\
 \item \textbf{S} = $\overline{\textbf{AB}}$C + $\overline{\textbf{A}}$\textbf{B}$\overline{\textbf{C}}$ + ...
 \item \textbf{S} = \textbf{A} $\oplus$ \textbf{B} $\oplus$ \textbf{Cin}
 \end{itemize}
+
 
 [insert full adder diagram with relevant sum and carry-out equation]
 
