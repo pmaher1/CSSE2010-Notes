@@ -439,6 +439,85 @@ $S_{1}$&$S_{0}$&F\\
 \end{tabular}
 \end{itemize}
 
+[insert 4-to-1 Multiplexer Logic Circuit Implementation]
+
+\subsubsection{Decoder}
+
+Decoder
+\begin{itemize}
+\item Converts \textit{n}-bit input to be a logic-1 on exactly one of $2^{n}$ outputs
+\item Example 3-to-8 decoder \\
+\begin{tabular}{ c c c | c c c c c c c c }
+A & B & C & $D_{0}$ & $D_{1}$ & $D_{2}$ & $D_{3}$ & $D_{4}$ & $D_{5}$ & $D_{6}$ & $D_{7}$ \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+\end{tabular}
+\textit{n} : $2^{n}$ decoder
+\end{itemize}
+
+\subsubsection{Gates aren't perfect}
+Gates aren't perfect.. The reality of timing
+[insert gates]
+\begin{itemize}
+\item Propagation delay- time for change in input to affect output
+\item Fall time- time taken for output to fall from 1 to 0
+\item Rise time- time for output to rise from 0 to 1
+\end{itemize}
+
+\subsection{Recap of Week 2}
+\begin{itemize}
+\item Combinational Logic Circuits- Adder, Adder/Subtractor, Multiplexer, Decoder
+\item Logic Gates- \textbf{NOT}, \textbf{AND}, \textbf{OR}, \textbf{NAND}, \textbf{NOR}, \textbf{XOR}, \textbf{XNOR},
+and Boolean algebra
+\item Binary representations- assigned, signed-mag, 1's comp, 2's comp, excess-$2^{n-1}$
+\end{itemize}
+
+\subsubsection{Circuits that remember values}
+\begin{itemize}
+\item The output of any logic gate or \textit{'combinational circuit'} is dependent on the current value of inputs only
+\item If an input changes, the output can also change and the previous value is lost forever
+\item Sequential circuits: the current output depends not only on the current inputs but also on the past outputs
+\item Circuits with memory can remember values, even if the input changes
+\end{itemize}
+
+Memory element: \underline{D Flip Flop}
+\begin{itemize}
+\item \textbf{D} is input
+\item \textbf{Q} is output
+\item \textbf{CLK} \textit{(clock)} is control input
+\item How does it work
+\begin{itemize}
+\item \textbf{Q} copies the value of \textbf{D} (and remember it) whenever \textbf{CLK} goes from 0 to 1 (rising edge)
+\end{itemize}
+\end{itemize}
+
+[insert logic time graphs of D, CLK, Q and logical symbols]
+
+\subsubsection{Characteristic Tables}
+\begin{itemize}
+\item 'Characteristic table' defines operation of flip-flop in tabular form
+\item D flip-flop
+\begin{tabular}{ c | c }
+\textbf{D} & \textbf{Q}(t+1) \\
+0 & 0 \\
+1 & 1 \\
+\end{tabular}
+\end{itemize}
+
+\subsubsection{D Flip-flops}
+\begin{itemize}
+\item Summary: D flip-flops remember either a "1" to "0" ~ i.e a single bit. That is the flip-flop remember the value till the next clock edge, upon which the D input is transformed to output Q
+\item To rmemeber 'n bits'
+\item Definition: A n-bit register can be made using \textit{n} D flip-flops
+\item There are other types of flip-flops, e.g.
+\begin{itemize}
+\item \textbf{JK} flip-flops
+\item \textbf{T} flip-flops
+\end{itemize}
+\item Flip-flops can be made out of logic gates
+\end{itemize}
 
 \section{Microarchitecture level}
 
