@@ -519,6 +519,123 @@ Memory element: \underline{D Flip Flop}
 \item Flip-flops can be made out of logic gates
 \end{itemize}
 
+\subsubsection{SR Latch}
+
+[insert logic image of SR Latch]
+
+\begin{itemize}
+\item A \textbf{NOR} gate
+\begin{tabular}{ c c c }
+A & B & \textbf{NOR} \\
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+\end{tabular}
+\item 
+\begin{tabular} { c c c c }
+S & R & Q & $\overline{Q}$ \\
+0 & 0 & $Q_{k-1}$ & $\overline{Q}_{k-1}$ \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+\end{tabular}
+\end{itemize}
+
+\subsubsection{Flip-flops vs Latches}
+\begin{itemize}
+\item Latches are level triggered devices- i.e. able to latch the output and respond to changes of logic levels on the inputs
+\item Latch circuits can be modified such that they become sensitive to an edge \textit{(i.e momentary transitions)} of a control
+input \textit{(i.e a clock signal)}
+\item Such circuits are called "flip-flops" and a flip-flop can store one bit of information while being sensitive to a clock edge 
+\textit{(i.e a flip-flop will change its output only at the clock edges, based on the inputs)}
+\item A clock signal has two edges
+\begin{itemize}
+\item Positive edge- 0 to 1 transition
+\item Negative edge- 1 to 0 transition
+\end{itemize}
+\item There are different types of flip-flops
+\begin{itemize}
+\item\textbf{D} flip-flop
+\item \textbf{JK} flip-flop
+\item \textbf{T} flip-flop
+\end{itemize}
+\item So, a \textbf{D} flip-flop can be positive edge triggered or negative edge triggered
+\item Positive edge triggered \textbf{D} flip-flop $\rightarrow$ input \textbf{D} is copied to output \textbf{Q} at the positive edge of the clock. In between the clock edges, the flip-flop is non-reponsive, thus stores the value
+\end{itemize}
+
+[insert symbolic image of 'real D flip-flop]
+
+\subsubsection{D Latches and Flip-flops- Symbols used}
+[insert 4 images of latches and flip-flops]
+\begin{itemize}
+\item Triangle indicates edge-triggered \textit{(therefore flip-flop)}
+\begin{itemize}
+\item \textit{(c)} sensitive to rising edge of click
+\item \textit{(d)} to falling edge
+\end{itemize}
+\item \textit{'State'} of a flip-flop is the value stored
+\item Flip-flops are generally more useful than latches
+\end{itemize} 
+
+\underline{D Flip-flop chips}
+\begin{enumerate}
+\item \textbf{74HCT74} chip; Dual \textbf{D} flip-flop
+\item \textbf{74HCT273} chip; eight \textbf{D} flip-flops
+\begin{itemize}
+\item can hold one byte of information \textit{(8 bits)}
+\end{itemize}
+\end{enumerate}
+
+\subsection{Combinational vs Sequential Circuits}
+\begin{itemize}
+\item Combinational circuits
+\begin{itemize}
+\item Logic gates only
+\end{itemize}
+\item Output is uniquely determined by the inputs
+\begin{itemize}
+\item i.e: one will always get the same output for a given set of inputs
+\end{itemize}
+\item Example of a combinational circuit [insert this]
+\item Sequential Circuits
+\begin{itemize}
+\item Include flip-flops
+\item Output determined by current inputs and current 'state'
+\item Output can only change when clock 'ticks'
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Sequential Circuits}
+\begin{itemize}
+\item 'State' = value stored in flip-flops
+\item Output depends on input and state
+\item Next state depends on input and state
+[insert sequential circuit picture]
+\end{itemize}
+
+\subsubsection{Synchronous Sequential Circuit}
+\begin{itemize}
+\item Storage elements (flip-flops) can only change at discrete instants of time
+\item Assume:
+\begin{itemize}
+\item There is a clock signal
+\item Output of storage elements change only on the edges of control siganl
+\begin{itemize}
+\item \textit{(compare with logic gates whose output changes whenever the input changes)}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\underline{Registers}
+\begin{itemize}
+\item A \textit{register} is a group of flip-flops
+\begin{itemize}
+\item n-bit register consists of \textit{n} flip-flops capable of storing \textit{n} bits
+\end{itemize}
+\item A register is a sequential circuit without any combinational logic
+\end{itemize}
+
 \section{Microarchitecture level}
 
 \section{Instruction set architecture level}
